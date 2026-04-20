@@ -3,20 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NightCheck | Franquicia de máquinas de test de alcohol para discotecas</title>
-  <meta name="description" content="NightCheck es la franquicia especializada en máquinas recreativas de test de alcohol para discotecas, bares de copas y espacios de ocio nocturno." />
-  <meta name="keywords" content="franquicia, alcoholímetro, discotecas, ocio nocturno, vending, nightcheck, test de alcohol, máquina recreativa, bar, local de copas" />
+  <title>NightCheck | Máquinas de test de alcohol para ocio nocturno</title>
+  <meta name="description" content="NightCheck instala y opera máquinas de alcoholímetro de autoservicio en discotecas, bares de copas y espacios de ocio nocturno en España." />
+  <meta name="keywords" content="alcoholímetro, discotecas, ocio nocturno, vending, nightcheck, test de alcohol, máquina, bar, copas" />
   <meta name="author" content="NightCheck" />
-  <meta property="og:title" content="NightCheck | Franquicia de máquinas de test de alcohol" />
-  <meta property="og:description" content="Expande tu negocio con NightCheck. Te damos la máquina, soporte, know-how y un modelo preparado para crecer en España." />
+  <meta property="og:title" content="NightCheck | Máquinas de test de alcohol para ocio nocturno" />
+  <meta property="og:description" content="NightCheck instala y opera máquinas de alcoholímetro de autoservicio en discotecas y bares de copas en toda España." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://www.adtecso.com/shop/wp-content/uploads/2019/02/Alcohol%C3%ADmetro-a-Monedas-Blow-Go-CDP-4500.jpg" />
   <meta name="theme-color" content="#0b1020" />
 
   <style>
     :root {
-      --bg: #07111f;
-      --bg-soft: #0c1830;
       --card: rgba(255,255,255,0.06);
       --card-border: rgba(255,255,255,0.10);
       --text: #e9eefb;
@@ -24,17 +22,12 @@
       --primary: #7c5cff;
       --primary-2: #3fd0ff;
       --accent: #17e3b1;
-      --danger: #ff5f7a;
-      --warning: #ffc857;
       --shadow: 0 20px 60px rgba(0,0,0,0.35);
       --radius: 22px;
-      --radius-sm: 14px;
       --max: 1200px;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-
     body {
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       background:
@@ -45,14 +38,9 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
-
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
-
-    .container {
-      width: min(100% - 32px, var(--max));
-      margin: 0 auto;
-    }
+    .container { width: min(100% - 32px, var(--max)); margin: 0 auto; }
 
     .badge {
       display: inline-flex;
@@ -66,48 +54,30 @@
       font-size: 0.92rem;
       backdrop-filter: blur(12px);
     }
-
     .badge::before {
       content: "";
-      width: 10px;
-      height: 10px;
+      width: 10px; height: 10px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--accent), var(--primary-2));
       box-shadow: 0 0 18px rgba(23,227,177,0.7);
     }
 
-    /* ─── SECTIONS: hidden by default, shown via JS ─── */
-    .page-section {
-      display: none;
-      padding: 90px 0;
-      position: relative;
-      animation: fadeSection 0.38s ease;
-    }
-
-    .page-section.active {
-      display: block;
-    }
-
-    @keyframes fadeSection {
+    /* Sections */
+    .page-section { display: none; padding: 90px 0; animation: fadeIn 0.38s ease; }
+    .page-section.active { display: block; }
+    @keyframes fadeIn {
       from { opacity: 0; transform: translateY(18px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
     .section-title {
       font-size: clamp(2rem, 4vw, 3.4rem);
       line-height: 1.05;
       margin-bottom: 18px;
       letter-spacing: -0.03em;
     }
-
-    .section-subtitle {
-      color: var(--muted);
-      max-width: 760px;
-      font-size: 1.05rem;
-    }
+    .section-subtitle { color: var(--muted); max-width: 760px; font-size: 1.05rem; }
 
     .grid { display: grid; gap: 24px; }
-
     .card {
       background: var(--card);
       border: 1px solid var(--card-border);
@@ -115,7 +85,6 @@
       box-shadow: var(--shadow);
       backdrop-filter: blur(14px);
     }
-
     .btn {
       display: inline-flex;
       align-items: center;
@@ -128,581 +97,307 @@
       transition: 0.25s ease;
       cursor: pointer;
     }
-
     .btn-primary {
       background: linear-gradient(135deg, var(--primary), var(--primary-2));
       color: white;
-      box-shadow: 0 14px 40px rgba(76, 84, 255, 0.35);
+      box-shadow: 0 14px 40px rgba(76,84,255,0.35);
     }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 46px rgba(76, 84, 255, 0.45);
-    }
-
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 46px rgba(76,84,255,0.45); }
     .btn-secondary {
       background: rgba(255,255,255,0.06);
       color: var(--text);
       border-color: rgba(255,255,255,0.10);
     }
+    .btn-secondary:hover { background: rgba(255,255,255,0.11); transform: translateY(-2px); }
 
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.11);
-      transform: translateY(-2px);
-    }
-
-    /* ─── NAVBAR ─── */
+    /* Navbar */
     .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(7, 17, 31, 0.72);
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(7,17,31,0.78);
       backdrop-filter: blur(18px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-
     .nav-wrap {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 76px;
-      gap: 20px;
+      min-height: 72px;
+      gap: 16px;
     }
-
     .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 900;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      cursor: pointer;
+      display: flex; align-items: center; gap: 12px;
+      font-weight: 900; letter-spacing: 0.04em;
+      text-transform: uppercase; cursor: pointer; flex-shrink: 0;
     }
-
     .logo-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
+      width: 40px; height: 40px; border-radius: 13px;
       background: linear-gradient(135deg, var(--primary), var(--primary-2));
-      display: grid;
-      place-items: center;
-      box-shadow: 0 10px 30px rgba(81, 99, 255, 0.4);
-      font-size: 1.1rem;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      font-weight: 600;
-      transition: 0.2s ease;
-      padding: 6px 10px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: white;
-      background: rgba(255,255,255,0.07);
-    }
-
-    /* ─── HERO ─── */
-    .hero {
-      padding: 70px 0 60px;
-      position: relative;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 34px;
-      align-items: center;
-    }
-
-    .hero-copy h1 {
-      font-size: clamp(2.6rem, 6vw, 5.4rem);
-      line-height: 0.95;
-      letter-spacing: -0.05em;
-      margin: 18px 0 22px;
-    }
-
-    .hero-copy h1 span {
-      background: linear-gradient(135deg, #ffffff 20%, #9cc7ff 45%, #83f7e0 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-copy p {
-      color: var(--muted);
-      font-size: 1.08rem;
-      max-width: 720px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 30px;
-    }
-
-    /* ─── Quick-access pills in navbar ─── */
-    .nav-quick {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .nav-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 7px 13px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.10);
-      color: #c8d8f8;
-      font-size: 0.84rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.2s ease;
-      white-space: nowrap;
-    }
-
-    .nav-pill:hover {
-      background: rgba(255,255,255,0.12);
-      color: white;
-      transform: translateY(-1px);
-    }
-
-    .nav-pill .pill-icon {
-      font-size: 1rem;
-      line-height: 1;
-    }
-
-    /* ─── Hero contact form ─── */
-    .hero-contact {
-      margin-top: 40px;
-      padding: 28px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.09);
-      backdrop-filter: blur(12px);
-    }
-
-    .hero-contact h3 {
-      font-size: 1.18rem;
-      margin-bottom: 6px;
-    }
-
-    .hero-contact p {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 18px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-
-    .form-field {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .form-field.full { grid-column: 1 / -1; }
-
-    .form-field label {
-      font-size: 0.84rem;
-      font-weight: 600;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .form-field input,
-    .form-field textarea,
-    .form-field select {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 12px;
-      padding: 12px 14px;
-      color: var(--text);
-      font-family: inherit;
-      font-size: 0.97rem;
-      outline: none;
-      transition: 0.2s ease;
-      resize: none;
-    }
-
-    .form-field input::placeholder,
-    .form-field textarea::placeholder {
-      color: rgba(168,179,207,0.5);
-    }
-
-    .form-field input:focus,
-    .form-field textarea:focus,
-    .form-field select:focus {
-      border-color: rgba(124,92,255,0.55);
-      background: rgba(124,92,255,0.08);
-    }
-
-    .form-field select option {
-      background: #0c1830;
-      color: var(--text);
-    }
-
-    .form-submit {
-      margin-top: 14px;
-      width: 100%;
-      padding: 15px;
-      border-radius: 14px;
-      font-size: 1rem;
-    }
-
-    .form-success {
-      display: none;
-      text-align: center;
-      padding: 22px;
-      color: var(--accent);
-      font-weight: 700;
+      display: grid; place-items: center;
+      box-shadow: 0 8px 24px rgba(81,99,255,0.4);
       font-size: 1.05rem;
     }
+    .nav-links {
+      display: flex; align-items: center; gap: 4px;
+    }
+    .nav-links a {
+      color: var(--muted); font-weight: 600; font-size: 0.93rem;
+      padding: 7px 11px; border-radius: 9px;
+      cursor: pointer; transition: 0.2s ease; white-space: nowrap;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: white; background: rgba(255,255,255,0.08);
+    }
+    .nav-links .btn-secondary { padding: 9px 16px; font-size: 0.9rem; }
 
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column; justify-content: center; align-items: center;
+      gap: 5px; width: 42px; height: 42px; border-radius: 11px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.10);
+      cursor: pointer; flex-shrink: 0;
+    }
+    .hamburger span {
+      display: block; width: 20px; height: 2px;
+      background: var(--text); border-radius: 2px; transition: 0.25s ease;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile dropdown */
+    .mobile-menu {
+      display: none; position: fixed;
+      top: 72px; left: 0; right: 0; z-index: 999;
+      background: rgba(6,11,22,0.97);
+      backdrop-filter: blur(22px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 14px 20px 22px;
+      flex-direction: column; gap: 4px;
+    }
+    .mobile-menu.open { display: flex; animation: dropDown 0.22s ease; }
+    @keyframes dropDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .mobile-menu a {
+      color: var(--muted); font-weight: 600; font-size: 1.05rem;
+      padding: 13px 16px; border-radius: 13px;
+      cursor: pointer; transition: 0.2s ease;
+    }
+    .mobile-menu a:hover, .mobile-menu a.active {
+      color: white; background: rgba(255,255,255,0.07);
+    }
+    .mobile-menu .btn-primary { margin-top: 10px; justify-content: center; border-radius: 13px; }
+
+    /* Hero */
+    .hero { padding: 70px 0 60px; position: relative; }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.15fr 0.85fr;
+      gap: 34px; align-items: center;
+    }
+    .hero-copy h1 {
+      font-size: clamp(2.6rem, 6vw, 5.2rem);
+      line-height: 0.96; letter-spacing: -0.05em;
+      margin: 18px 0 22px;
+    }
+    .hero-copy h1 span {
+      background: linear-gradient(135deg, #ffffff 20%, #9cc7ff 45%, #83f7e0 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-copy p { color: var(--muted); font-size: 1.08rem; max-width: 600px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
     .hero-visual { position: relative; }
-
     .visual-card { padding: 22px; overflow: hidden; }
-
-    /* ─── Machine frame: imagen limpia sin etiquetas ─── */
     .machine-frame {
-      position: relative;
-      min-height: 640px;
-      border-radius: 24px;
-      overflow: hidden;
+      position: relative; min-height: 640px; border-radius: 24px; overflow: hidden;
       background:
         linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.02)),
         linear-gradient(145deg, rgba(124,92,255,0.22), rgba(63,208,255,0.10));
       border: 1px solid rgba(255,255,255,0.10);
     }
-
-    .machine-main {
-      position: absolute;
-      inset: 0;
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
+    .machine-main { position: absolute; inset: 0; object-fit: cover; width: 100%; height: 100%; }
+    .glow {
+      position: absolute; width: 240px; height: 240px;
+      border-radius: 50%; filter: blur(60px);
+      opacity: 0.26; z-index: -1; pointer-events: none;
     }
+    .glow.one { background: var(--primary); top: 10%; left: -60px; }
+    .glow.two { background: var(--primary-2); bottom: 10%; right: -60px; }
 
-    /* ─── CONTENT SECTIONS ─── */
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      align-items: stretch;
+    /* Intro strip */
+    .intro-strip { padding: 60px 0 70px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .intro-inner {
+      display: grid; grid-template-columns: 1.5fr 0.5fr;
+      gap: 48px; align-items: center;
     }
+    .intro-title {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      letter-spacing: -0.03em; margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 30%, #9cc7ff 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .intro-text p { color: var(--muted); font-size: 1.02rem; line-height: 1.75; margin-bottom: 14px; }
+    .intro-text p:last-child { margin-bottom: 0; }
+    .intro-stats { display: flex; flex-direction: column; gap: 16px; }
+    .intro-stat {
+      padding: 18px 22px; border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .stat-icon { font-size: 1.6rem; }
+    .stat-num {
+      font-size: 1.9rem; font-weight: 900; letter-spacing: -0.04em;
+      background: linear-gradient(135deg, var(--accent), var(--primary-2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .stat-label { color: var(--muted); font-size: 0.88rem; font-weight: 600; }
 
+    /* Layout helpers */
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
     .info-card { padding: 28px; }
-
     .info-card h3 { font-size: 1.35rem; margin-bottom: 12px; }
-
     .info-card p { color: var(--muted); margin-bottom: 12px; }
-
     .list { display: grid; gap: 12px; margin-top: 14px; }
-
     .list li {
-      list-style: none;
-      position: relative;
-      padding-left: 28px;
-      color: #d7e2ff;
+      list-style: none; position: relative;
+      padding-left: 28px; color: #d7e2ff;
     }
-
     .list li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--accent);
-      font-weight: 900;
+      content: "✓"; position: absolute; left: 0; top: 0;
+      color: var(--accent); font-weight: 900;
     }
 
-    .feature-grid {
-      grid-template-columns: repeat(3, 1fr);
-      margin-top: 36px;
-    }
-
+    /* Feature grid */
+    .feature-grid { grid-template-columns: repeat(3,1fr); margin-top: 36px; }
     .feature-card { padding: 28px; min-height: 100%; }
-
     .feature-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 16px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 16px;
-      font-size: 1.4rem;
+      width: 56px; height: 56px; border-radius: 16px;
+      display: grid; place-items: center;
+      margin-bottom: 16px; font-size: 1.4rem;
       background: linear-gradient(135deg, rgba(124,92,255,0.25), rgba(63,208,255,0.22));
       border: 1px solid rgba(255,255,255,0.1);
     }
-
     .feature-card h3 { margin-bottom: 10px; font-size: 1.22rem; }
     .feature-card p { color: var(--muted); }
 
-    .regions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .chip {
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.10);
-      color: #dfe8ff;
-      font-weight: 600;
-    }
-
-    .steps { grid-template-columns: repeat(4, 1fr); margin-top: 34px; }
-
-    .step { padding: 24px; position: relative; overflow: hidden; }
-
+    /* Steps */
+    .steps { grid-template-columns: repeat(4,1fr); margin-top: 34px; }
+    .step { padding: 24px; }
     .step-number {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
+      width: 42px; height: 42px; border-radius: 12px;
+      display: grid; place-items: center;
       background: linear-gradient(135deg, var(--primary), var(--primary-2));
-      font-weight: 900;
-      margin-bottom: 16px;
+      font-weight: 900; margin-bottom: 16px;
     }
-
     .step h3 { margin-bottom: 10px; font-size: 1.1rem; }
     .step p { color: var(--muted); }
 
+    /* Vision */
+    .vision-grid { grid-template-columns: repeat(3,1fr); margin-top: 36px; }
+    .vision-card { padding: 30px; }
+    .vision-icon { font-size: 2rem; margin-bottom: 14px; display: block; }
+    .vision-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+    .vision-card p { color: var(--muted); line-height: 1.7; }
+
+    /* Machines gallery */
     .gallery { grid-template-columns: 1fr 1fr; margin-top: 34px; }
-
     .gallery-card { padding: 14px; overflow: hidden; }
-
-    .gallery-card img {
-      height: 430px;
-      width: 100%;
-      object-fit: cover;
-      border-radius: 18px;
+    .gallery-card img { height: 430px; width: 100%; object-fit: cover; border-radius: 18px; }
+    .gallery-label {
+      padding: 13px 10px 5px;
+      font-size: 0.8rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted);
     }
 
-    .gallery-caption {
-      padding: 16px 8px 6px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
+    /* Service strip */
+    .service-strip { margin-top: 28px; display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+    .service-item { padding: 22px 18px; border-radius: 18px; text-align: center; }
+    .service-item .si-icon { font-size: 1.6rem; margin-bottom: 10px; }
+    .service-item h4 { font-size: 0.97rem; margin-bottom: 6px; }
+    .service-item p { color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
 
+    /* FAQ */
     .faq { margin-top: 34px; display: grid; gap: 16px; }
-
     details {
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 18px 20px;
+      border-radius: 18px; padding: 18px 20px;
     }
-
-    summary {
-      cursor: pointer;
-      font-weight: 700;
-      list-style: none;
-    }
-
+    summary { cursor: pointer; font-weight: 700; list-style: none; }
     summary::-webkit-details-marker { display: none; }
     details p { color: var(--muted); margin-top: 12px; }
 
+    /* Contact */
     .cta-panel {
       padding: 34px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 24px;
-      align-items: center;
+      display: grid; grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px; align-items: center;
       background:
         linear-gradient(135deg, rgba(124,92,255,0.18), rgba(63,208,255,0.14)),
         rgba(255,255,255,0.05);
     }
-
-    .cta-panel h2 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      line-height: 1.05;
-      margin-bottom: 14px;
-    }
-
+    .cta-panel h2 { font-size: clamp(2rem,4vw,3.2rem); line-height: 1.05; margin-bottom: 14px; }
     .cta-panel p { color: var(--muted); max-width: 720px; }
-
     .contact-box {
-      padding: 24px;
-      border-radius: 20px;
+      padding: 24px; border-radius: 20px;
       background: rgba(7,17,31,0.48);
       border: 1px solid rgba(255,255,255,0.10);
     }
-
     .contact-list { display: grid; gap: 12px; margin: 18px 0 22px; }
-
     .contact-item {
-      padding: 14px 16px;
-      border-radius: 14px;
+      padding: 14px 16px; border-radius: 14px;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.08);
-      color: #dbe5ff;
-      word-break: break-word;
+      color: #dbe5ff; word-break: break-word;
     }
-
     .contact-item span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 4px;
+      display: block; color: var(--muted);
+      font-size: 0.9rem; margin-bottom: 4px;
     }
 
-    .footer {
-      padding: 30px 0 50px;
-      color: var(--muted);
-    }
-
+    /* Footer */
+    .footer { padding: 30px 0 50px; color: var(--muted); }
     .footer-wrap {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
+      display: flex; justify-content: space-between;
+      gap: 20px; flex-wrap: wrap;
       border-top: 1px solid rgba(255,255,255,0.08);
       padding-top: 26px;
     }
-
-    .legal-note {
-      margin-top: 18px;
-      color: #97a5c7;
-      font-size: 0.92rem;
-      max-width: 920px;
-    }
-
+    .legal-note { margin-top: 18px; color: #97a5c7; font-size: 0.92rem; max-width: 920px; }
     .highlight { color: white; }
 
-    .glow {
-      position: absolute;
-      width: 240px;
-      height: 240px;
-      border-radius: 50%;
-      filter: blur(60px);
-      opacity: 0.26;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    .glow.one { background: var(--primary); top: 10%; left: -60px; }
-    .glow.two { background: var(--primary-2); bottom: 10%; right: -60px; }
-
+    /* Responsive */
     @media (max-width: 1080px) {
       .hero-grid, .split, .cta-panel { grid-template-columns: 1fr; }
-      .feature-grid { grid-template-columns: repeat(2, 1fr); }
-      .steps { grid-template-columns: repeat(2, 1fr); }
-      .hero-points { grid-template-columns: 1fr; }
+      .feature-grid, .vision-grid { grid-template-columns: repeat(2,1fr); }
+      .steps, .service-strip { grid-template-columns: repeat(2,1fr); }
       .machine-frame { min-height: 560px; }
-    }
-
-    @media (max-width: 720px) {
-      .nav-links { display: none; }
-      .feature-grid, .steps, .gallery { grid-template-columns: 1fr; }
-      .page-section { padding: 72px 0; }
-      .machine-frame { min-height: 460px; }
-      .hero-copy h1 { font-size: 2.8rem; }
-      .section-title { font-size: 2.1rem; }
-      .cta-panel, .info-card, .feature-card, .step { padding: 22px; }
-    }
-    /* ─── Intro strip (always visible, below hero) ─── */
-    .intro-strip {
-      padding: 60px 0 70px;
-      position: relative;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .intro-inner {
-      display: grid;
-      grid-template-columns: 1.4fr 0.6fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .intro-title {
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      letter-spacing: -0.03em;
-      margin-bottom: 16px;
-      background: linear-gradient(135deg, #ffffff 30%, #9cc7ff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .intro-text p {
-      color: var(--muted);
-      font-size: 1.02rem;
-      line-height: 1.75;
-      margin-bottom: 14px;
-    }
-
-    .intro-text p:last-child { margin-bottom: 0; }
-
-    .intro-stats {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .intro-stat {
-      padding: 20px 24px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .stat-num {
-      font-size: 2rem;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      background: linear-gradient(135deg, var(--accent), var(--primary-2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .stat-label {
-      color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    @media (max-width: 860px) {
       .intro-inner { grid-template-columns: 1fr; gap: 30px; }
       .intro-stats { flex-direction: row; flex-wrap: wrap; }
       .intro-stat { flex: 1; min-width: 130px; }
     }
 
     @media (max-width: 720px) {
-      .intro-strip { padding: 48px 0 56px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .feature-grid, .vision-grid, .steps, .gallery, .service-strip { grid-template-columns: 1fr; }
+      .page-section { padding: 64px 0; }
+      .machine-frame { min-height: 420px; }
+      .hero-copy h1 { font-size: 2.8rem; }
+      .section-title { font-size: 2.1rem; }
+      .cta-panel, .info-card, .feature-card, .step { padding: 22px; }
+      .hero { padding: 48px 0 40px; }
+      .intro-strip { padding: 44px 0 52px; }
+      .gallery-card img { height: 280px; }
     }
-
   </style>
 </head>
 <body>
 
+  <!-- NAV -->
   <nav class="navbar">
     <div class="container nav-wrap">
       <div class="logo" onclick="showSection(null)">
@@ -711,232 +406,188 @@
       </div>
 
       <div class="nav-links">
-        <a onclick="showSection('modelo')"    data-target="modelo">Modelo</a>
+        <a onclick="showSection('servicio')"  data-target="servicio">Servicio</a>
         <a onclick="showSection('ventajas')"  data-target="ventajas">Ventajas</a>
         <a onclick="showSection('maquinas')"  data-target="maquinas">Máquinas</a>
+        <a onclick="showSection('vision')"    data-target="vision">Visión</a>
         <a onclick="showSection('faq')"       data-target="faq">FAQ</a>
-
-        <a onclick="showSection('expansion')" data-target="expansion">Expansión</a>
         <a onclick="showSection('contacto')"  data-target="contacto" class="btn btn-secondary">Contacto</a>
+      </div>
+
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
       </div>
     </div>
   </nav>
 
-  <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a onclick="showSection('servicio'); closeMenu()"  data-target="servicio">Servicio</a>
+    <a onclick="showSection('ventajas'); closeMenu()"  data-target="ventajas">Ventajas</a>
+    <a onclick="showSection('maquinas'); closeMenu()"  data-target="maquinas">Máquinas</a>
+    <a onclick="showSection('vision');   closeMenu()"  data-target="vision">Visión</a>
+    <a onclick="showSection('faq');      closeMenu()"  data-target="faq">FAQ</a>
+    <a onclick="showSection('contacto'); closeMenu()"  class="btn btn-primary">Contacto</a>
+  </div>
+
+  <!-- HERO -->
   <header class="hero" id="inicio">
     <div class="glow one"></div>
     <div class="glow two"></div>
-
     <div class="container hero-grid">
       <div class="hero-copy">
-        <div class="badge">Franquicia de máquinas recreativas de test de alcohol</div>
-        <h1>
-          Haz crecer tu negocio con <span>NightCheck</span>
-        </h1>
+        <div class="badge">Máquinas de test de alcohol para ocio nocturno</div>
+        <h1>El alcoholímetro en tu local con <span>NightCheck</span></h1>
         <p>
-          En NightCheck ayudamos a emprendedores y operadores a entrar en el sector del ocio nocturno con una propuesta clara:
-          te proporcionamos la máquina, el know-how, soporte continuo y un modelo preparado para seguir creciendo en distintas
-          regiones de España.
+          Instalamos y operamos máquinas de alcoholímetro de autoservicio en discotecas, bares de copas y espacios de ocio.
+          Un servicio llave en mano: nosotros nos encargamos de todo.
         </p>
-
         <div class="hero-actions">
-          <a onclick="showSection('modelo')" class="btn btn-secondary">Ver como funciona</a>
+          <a onclick="showSection('contacto')" class="btn btn-primary">Contactar</a>
+          <a onclick="showSection('servicio')" class="btn btn-secondary">Cómo funciona</a>
         </div>
       </div>
-
       <div class="hero-visual">
         <div class="card visual-card">
-          <!-- Imagen limpia, sin etiquetas flotantes -->
           <div class="machine-frame">
-            <img
-              class="machine-main"
+            <img class="machine-main"
               src="https://www.adtecso.com/shop/wp-content/uploads/2019/02/Alcohol%C3%ADmetro-a-Monedas-Blow-Go-CDP-4500.jpg"
-              alt="Máquina NightCheck de test de alcohol para ocio nocturno"
-            />
+              alt="Máquina NightCheck de test de alcohol" />
           </div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- ═══════════════════════════ INTRO (siempre visible) ═══════════════ -->
+  <!-- INTRO STRIP (siempre visible) -->
   <section class="intro-strip">
     <div class="container">
       <div class="intro-inner">
         <div class="intro-text">
           <h2 class="intro-title">¿Qué es NightCheck?</h2>
           <p>
-            NightCheck es una franquicia especializada en máquinas de alcoholímetro de uso público para el sector del ocio nocturno.
-            Instalamos equipos de autoservicio en discotecas, bares de copas y salas de fiesta: el cliente introduce una moneda o paga
-            con tarjeta, sopla y obtiene su resultado al instante.
+            NightCheck es una empresa especializada en la instalación y operación de máquinas de alcoholímetro de autoservicio
+            en espacios de ocio nocturno. Nuestro equipo se encarga de todo: colocamos la máquina en el local,
+            la mantenemos en perfecto estado y ofrecemos soporte técnico continuo.
           </p>
           <p>
-            Para el franquiciado, es un modelo llave en mano: proporcionamos la máquina, la operativa, el know-how comercial y soporte
-            continuo para que puedas consolidar tu zona y seguir creciendo. Sin complicaciones técnicas, con una marca preparada para
-            escalar por toda España.
+            El cliente se acerca, elige su método de pago —monedas o tarjeta—, sopla y obtiene su resultado al instante.
+            Sencillo para el usuario, sin complicaciones para el local. Un servicio diferencial que añade valor a
+            discotecas, bares de copas y salas de fiesta de toda España.
           </p>
         </div>
         <div class="intro-stats">
           <div class="intro-stat">
-            <span class="stat-num">+10</span>
-            <span class="stat-label">Regiones activas</span>
+            <span class="stat-icon">🌙</span>
+            <span class="stat-label">Especialistas en ocio nocturno</span>
           </div>
           <div class="intro-stat">
             <span class="stat-num">24h</span>
-            <span class="stat-label">Soporte de respuesta</span>
+            <span class="stat-label">Soporte técnico garantizado</span>
           </div>
           <div class="intro-stat">
-            <span class="stat-num">2</span>
-            <span class="stat-label">Métodos de pago</span>
+            <span class="stat-icon">💳</span>
+            <span class="stat-label">Pago con tarjeta y monedas</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="page-section" id="modelo">
-    <div class="container">
-      <h2 class="section-title">Un modelo sencillo de entender y fácil de escalar</h2>
-      <p class="section-subtitle">
-        Nuestro concepto está pensado para ubicaciones de alto tránsito dentro del ocio nocturno. Las máquinas de alcoholímetro
-        vending se utilizan en hostelería, restauración y espacios públicos, con cobro por moneda y pago híbrido con TPV digital.
-      </p>
+  <!-- SECCIONES -->
 
+  <section class="page-section" id="servicio">
+    <div class="container">
+      <h2 class="section-title">Cómo funciona nuestro servicio</h2>
+      <p class="section-subtitle">
+        Un modelo pensado para que el local no tenga que preocuparse de nada. NightCheck gestiona la instalación,
+        el mantenimiento y la operativa completa de cada máquina.
+      </p>
       <div class="split" style="margin-top:34px;">
         <div class="card info-card">
-          <h3>Qué recibe un franquiciado</h3>
-          <p>
-            NightCheck no solo entrega una máquina. Entrega un sistema de trabajo para que puedas empezar con una base sólida,
-            apoyado por nuestra experiencia y acompañamiento.
-          </p>
+          <h3>Lo que incluye el servicio</h3>
+          <p>Nos encargamos de todo el proceso, desde la instalación hasta el soporte diario, para que el local pueda centrarse en su negocio.</p>
           <ul class="list">
-            <li>La máquina preparada para su instalación y explotación.</li>
-            <li>Know-how comercial y operativo para ponerla en marcha.</li>
-            <li>Soporte continuo para dudas, incidencias y seguimiento.</li>
-            <li>Orientación para expansión territorial y captación de ubicaciones.</li>
-            <li>Modelo enfocado a discotecas, bares de copas y entornos de ocio.</li>
+            <li>Instalación completa de la máquina en el local.</li>
+            <li>Mantenimiento técnico y calibración periódica.</li>
+            <li>Soporte continuo ante cualquier incidencia.</li>
+            <li>Reposición de consumibles y piezas si es necesario.</li>
+            <li>Adaptación del equipo al espacio y afluencia del local.</li>
           </ul>
         </div>
-
         <div class="card info-card">
-          <h3>Qué valor aporta al local</h3>
-          <p>
-            La propuesta combina utilidad, visibilidad y experiencia de usuario. Las máquinas se colocan en espacios donde el
-            cliente puede realizar la prueba de forma autónoma.
-          </p>
+          <h3>Qué gana el local</h3>
+          <p>Una máquina de alcoholímetro es un elemento diferencial que mejora la experiencia del cliente sin ningún esfuerzo por parte del establecimiento.</p>
           <ul class="list">
-            <li>Servicio llamativo para el cliente final.</li>
-            <li>Elemento diferencial dentro del local.</li>
-            <li>Formato autoservicio, rápido y fácil de usar.</li>
-            <li>Compatible con cobro por monedas y soluciones de pago modernas.</li>
-            <li>Especialmente adecuado para zonas de alta rotación.</li>
+            <li>Servicio atractivo y de alto valor para el cliente.</li>
+            <li>Elemento diferenciador respecto a otros locales.</li>
+            <li>Autoservicio rápido, sin intervención del personal.</li>
+            <li>Compatible con pago por monedas y tarjeta.</li>
+            <li>Sin inversión ni gestión por parte del local.</li>
           </ul>
         </div>
+      </div>
+      <div class="grid steps">
+        <article class="card step">
+          <div class="step-number">1</div>
+          <h3>Nos contactas</h3>
+          <p>Cuéntanos dónde está tu local y acordamos una visita o llamada para valorar la instalación.</p>
+        </article>
+        <article class="card step">
+          <div class="step-number">2</div>
+          <h3>Instalación</h3>
+          <p>Nuestro equipo instala y configura la máquina en el punto óptimo de tu local.</p>
+        </article>
+        <article class="card step">
+          <div class="step-number">3</div>
+          <h3>En funcionamiento</h3>
+          <p>La máquina opera de forma autónoma. Tus clientes disfrutan del servicio sin esperas.</p>
+        </article>
+        <article class="card step">
+          <div class="step-number">4</div>
+          <h3>Soporte continuo</h3>
+          <p>Nos encargamos del mantenimiento. Tú no tienes que hacer nada.</p>
+        </article>
       </div>
     </div>
   </section>
 
   <section class="page-section" id="ventajas">
     <div class="container">
-      <h2 class="section-title">Ventajas de franquiciarte con NightCheck</h2>
+      <h2 class="section-title">Por qué elegir NightCheck</h2>
       <p class="section-subtitle">
-        Hemos diseñado una marca directa, moderna y orientada a negocio. El objetivo es que puedas entrar en un formato especializado
-        con apoyo desde el principio y con una imagen preparada para crecer.
+        Somos especialistas en el sector del ocio nocturno. Conocemos sus necesidades y hemos diseñado un servicio que encaja con su ritmo y su público.
       </p>
-
       <div class="grid feature-grid">
         <article class="card feature-card">
           <div class="feature-icon">⚙️</div>
-          <h3>Operativa clara</h3>
-          <p>Simplificamos la puesta en marcha para que el foco esté en encontrar ubicaciones, activar máquinas y consolidar tu zona.</p>
+          <h3>Sin complicaciones</h3>
+          <p>Instalamos, mantenemos y operamos. El local no tiene que preocuparse de nada técnico.</p>
         </article>
-
         <article class="card feature-card">
-          <div class="feature-icon">🧠</div>
-          <h3>Know-how incluido</h3>
-          <p>Te ayudamos con criterios comerciales, dudas habituales y la lógica del negocio para acelerar tu aprendizaje.</p>
+          <div class="feature-icon">🌙</div>
+          <h3>Especialistas en ocio</h3>
+          <p>Nuestras máquinas están pensadas para discotecas, salas y bares de copas: resistentes, rápidas y llamativas.</p>
         </article>
-
-        <article class="card feature-card">
-          <div class="feature-icon">📍</div>
-          <h3>Potencial territorial</h3>
-          <p>Ya estamos presentes en varias regiones de España y queremos seguir ampliando nuestra red con nuevos franquiciados.</p>
-        </article>
-
         <article class="card feature-card">
           <div class="feature-icon">💳</div>
           <h3>Pago flexible</h3>
-          <p>El usuario puede pagar con tarjeta o con monedas, lo que mejora la accesibilidad del servicio.</p>
+          <p>El cliente puede pagar con tarjeta o con monedas. Más opciones, más uso, mejor experiencia.</p>
         </article>
-
         <article class="card feature-card">
-          <div class="feature-icon">🌙</div>
-          <h3>Enfoque en ocio nocturno</h3>
-          <p>Toda la propuesta de marca está adaptada a discotecas, salas, bares de copas y espacios donde la experiencia importa.</p>
+          <div class="feature-icon">🛠️</div>
+          <h3>Mantenimiento incluido</h3>
+          <p>Calibración, revisión periódica y soporte ante incidencias. Todo cubierto por nuestro equipo.</p>
         </article>
-
         <article class="card feature-card">
-          <div class="feature-icon">🤝</div>
-          <h3>Acompañamiento continuo</h3>
-          <p>No te dejamos solo después de instalar. Resolvemos dudas y te apoyamos en el crecimiento del proyecto.</p>
+          <div class="feature-icon">✨</div>
+          <h3>Valor para el local</h3>
+          <p>Un servicio diferencial que mejora la percepción del establecimiento y fideliza al cliente.</p>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="page-section" id="expansion">
-    <div class="container">
-      <h2 class="section-title">Expansión en España</h2>
-      <p class="section-subtitle">
-        NightCheck ya opera en varias regiones y busca seguir extendiendo la marca con vocación nacional.
-      </p>
-
-      <div class="card info-card" style="margin-top:34px;">
-        <h3>Zonas objetivo</h3>
-        <p>
-          Buscamos colaboradores con perfil comercial, visión de desarrollo local y capacidad para crear relaciones con discotecas,
-          salas de fiesta, bares de copas, parkings, zonas de restauración y otros espacios de alto tráfico.
-        </p>
-
-        <div class="regions">
-          <span class="chip">Cataluña</span>
-          <span class="chip">Madrid</span>
-          <span class="chip">Comunidad Valenciana</span>
-          <span class="chip">Andalucía</span>
-          <span class="chip">País Vasco</span>
-          <span class="chip">Aragón</span>
-          <span class="chip">Galicia</span>
-          <span class="chip">Baleares</span>
-          <span class="chip">Canarias</span>
-          <span class="chip">Castilla y León</span>
-          <span class="chip">Murcia</span>
-          <span class="chip">Más regiones</span>
-        </div>
-      </div>
-
-      <div class="grid steps">
-        <article class="card step">
-          <div class="step-number">1</div>
-          <h3>Contacto inicial</h3>
-          <p>Nos escribes, analizamos tu zona y entendemos el potencial comercial del territorio.</p>
-        </article>
-
-        <article class="card step">
-          <div class="step-number">2</div>
-          <h3>Validación</h3>
-          <p>Revisamos el encaje del perfil, la estrategia de captación y el tipo de ubicaciones objetivo.</p>
-        </article>
-
-        <article class="card step">
-          <div class="step-number">3</div>
-          <h3>Puesta en marcha</h3>
-          <p>Te entregamos la máquina, el know-how y el soporte necesario para empezar con seguridad.</p>
-        </article>
-
-        <article class="card step">
-          <div class="step-number">4</div>
-          <h3>Escalado</h3>
-          <p>Consolidamos resultados y te ayudamos a crecer dentro de tu área con nuevas ubicaciones.</p>
+        <article class="card feature-card">
+          <div class="feature-icon">📞</div>
+          <h3>Atención directa</h3>
+          <p>Equipo de contacto real, respuesta rápida y seguimiento personalizado en cada instalación.</p>
         </article>
       </div>
     </div>
@@ -946,50 +597,84 @@
     <div class="container">
       <h2 class="section-title">Nuestras máquinas</h2>
       <p class="section-subtitle">
-        Equipos de uso público orientados al ocio, con instalación mural y pago por monedas o soluciones híbridas según el modelo.
-        Pensados para negocios de alta rotación.
+        Equipos robustos y de diseño llamativo, pensados para soportar el ritmo del ocio nocturno.
+        A continuación puedes ver un ejemplo del tipo de equipos que instalamos.
       </p>
-
       <div class="grid gallery">
         <div class="card gallery-card">
-          <img
-            src="https://www.adtecso.com/shop/wp-content/uploads/2019/02/Alcohol%C3%ADmetro-a-Monedas-Blow-Go-CDP-4500.jpg"
-            alt="Máquina NightCheck modelo principal"
-          />
-          <div class="gallery-caption">Imagen principal de referencia para la marca NightCheck.</div>
+          <img src="https://www.adtecso.com/shop/wp-content/uploads/2019/02/Alcohol%C3%ADmetro-a-Monedas-Blow-Go-CDP-4500.jpg"
+               alt="Ejemplo de equipo NightCheck en local de ocio" />
+          <div class="gallery-label">Ejemplo de equipo instalado</div>
         </div>
-
         <div class="card gallery-card">
-          <img
-            src="https://ae01.alicdn.com/kf/S9a9c1a4266574fc7ae26ec396a7d68f7K.jpg"
-            alt="Segunda imagen de máquina NightCheck"
-          />
-          <div class="gallery-caption">Segunda imagen de apoyo para presentar la línea de producto.</div>
+          <img src="https://ae01.alicdn.com/kf/S9a9c1a4266574fc7ae26ec396a7d68f7K.jpg"
+               alt="Detalle de máquina NightCheck" />
+          <div class="gallery-label">Detalle del equipo</div>
         </div>
       </div>
-
-      <div class="split" style="margin-top:24px;">
-        <div class="card info-card">
-          <h3>Pagos disponibles</h3>
-          <p>En NightCheck comunicamos dos métodos de pago: tarjeta y monedas, con equipos híbridos disponibles.</p>
-          <ul class="list">
-            <li>Pago con monedas.</li>
-            <li>Pago con tarjeta.</li>
-            <li>Experiencia más cómoda para el usuario final.</li>
-            <li>Mayor adaptación a distintos perfiles de cliente.</li>
-          </ul>
+      <div class="service-strip">
+        <div class="service-item card">
+          <div class="si-icon">🎯</div>
+          <h4>Instalación mural</h4>
+          <p>Montaje fijo y seguro, adaptado al espacio del local.</p>
         </div>
-
-        <div class="card info-card">
-          <h3>Ubicaciones recomendadas</h3>
-          <p>Las máquinas se orientan a bares, hostelería, restauración, parkings y espacios públicos de uso rápido y accesible.</p>
-          <ul class="list">
-            <li>Discotecas y salas de fiesta.</li>
-            <li>Bares de copas y pubs.</li>
-            <li>Locales de ocio nocturno.</li>
-            <li>Parkings, zonas de paso y espacios complementarios.</li>
-          </ul>
+        <div class="service-item card">
+          <div class="si-icon">💰</div>
+          <h4>Monedas y tarjeta</h4>
+          <p>Compatible con ambos métodos de pago para mayor accesibilidad.</p>
         </div>
+        <div class="service-item card">
+          <div class="si-icon">⚡</div>
+          <h4>Resultado inmediato</h4>
+          <p>Tecnología precisa con respuesta en segundos.</p>
+        </div>
+        <div class="service-item card">
+          <div class="si-icon">🔧</div>
+          <h4>Siempre operativa</h4>
+          <p>Mantenimiento y calibración periódica a cargo de NightCheck.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section" id="vision">
+    <div class="container">
+      <h2 class="section-title">Nuestra visión</h2>
+      <p class="section-subtitle">
+        Queremos que el test de alcohol sea un servicio habitual en cada espacio de ocio nocturno de España.
+        Ese es el objetivo que guía cada decisión que tomamos.
+      </p>
+      <div class="grid vision-grid">
+        <article class="card vision-card">
+          <span class="vision-icon">🚀</span>
+          <h3>Crecer con propósito</h3>
+          <p>Nuestro objetivo es estar presentes en los principales espacios de ocio nocturno de España. Crecemos de forma constante, asegurándonos de que cada instalación funciona bien antes de dar el siguiente paso.</p>
+        </article>
+        <article class="card vision-card">
+          <span class="vision-icon">🌍</span>
+          <h3>Expansión nacional</h3>
+          <p>Operamos en distintas ciudades y seguimos ampliando nuestra presencia. El plan es llegar a cada rincón donde el ocio nocturno forme parte de la cultura local.</p>
+        </article>
+        <article class="card vision-card">
+          <span class="vision-icon">🤝</span>
+          <h3>Alianzas a largo plazo</h3>
+          <p>Nos interesa construir relaciones duraderas con los locales. No somos proveedores puntuales: somos un socio de servicio comprometido con el funcionamiento de cada equipo.</p>
+        </article>
+        <article class="card vision-card">
+          <span class="vision-icon">💡</span>
+          <h3>Innovación continua</h3>
+          <p>El sector evoluciona y nosotros también. Exploramos nuevas tecnologías, métodos de pago y formatos de equipo para ofrecer siempre la mejor experiencia posible.</p>
+        </article>
+        <article class="card vision-card">
+          <span class="vision-icon">🛡️</span>
+          <h3>Responsabilidad social</h3>
+          <p>Creemos que el test de alcohol contribuye a una cultura del ocio más consciente y segura. Ayudamos a que cada persona tome decisiones informadas antes de ponerse al volante.</p>
+        </article>
+        <article class="card vision-card">
+          <span class="vision-icon">📈</span>
+          <h3>Escala sin perder calidad</h3>
+          <p>Crecer no implica descuidar el servicio. Invertimos en equipo, en procesos y en soporte para que cada máquina NightCheck funcione igual de bien en cualquier punto de España.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -997,34 +682,27 @@
   <section class="page-section" id="faq">
     <div class="container">
       <h2 class="section-title">Preguntas frecuentes</h2>
-      <p class="section-subtitle">
-        Respuestas breves para las dudas más habituales de un posible franquiciado o colaborador.
-      </p>
-
+      <p class="section-subtitle">Resolvemos las dudas más habituales sobre nuestro servicio.</p>
       <div class="faq">
         <details open>
-          <summary>¿NightCheck vende solo la máquina?</summary>
-          <p>No. La propuesta de NightCheck incluye la máquina, el know-how y soporte continuo para dudas y operativa.</p>
+          <summary>¿El local tiene que comprar la máquina?</summary>
+          <p>No. NightCheck proporciona e instala la máquina. El local no realiza ninguna inversión inicial ni se encarga del mantenimiento.</p>
         </details>
-
         <details>
-          <summary>¿Se puede cobrar con tarjeta y con monedas?</summary>
-          <p>Sí. Comunicamos ambas opciones de pago, y el mercado ya ofrece soluciones híbridas con monedas y TPV digital.</p>
+          <summary>¿Qué métodos de pago acepta la máquina?</summary>
+          <p>Las máquinas aceptan pago con monedas y con tarjeta, adaptándose a cualquier perfil de usuario.</p>
         </details>
-
         <details>
-          <summary>¿En qué tipo de ubicaciones encaja mejor?</summary>
-          <p>Principalmente en discotecas, bares de copas, hostelería y otros espacios de ocio o alto tránsito.</p>
+          <summary>¿En qué tipo de locales instaláis?</summary>
+          <p>Principalmente en discotecas, bares de copas, salas de fiesta y espacios de ocio nocturno. También valoramos otras ubicaciones de alto tránsito como parkings o zonas de restauración.</p>
         </details>
-
         <details>
-          <summary>¿Buscáis expansión fuera de las zonas actuales?</summary>
-          <p>Sí. NightCheck ya está presente en varias regiones y quiere seguir creciendo con nuevos franquiciados en España.</p>
+          <summary>¿Quién se encarga del mantenimiento?</summary>
+          <p>NightCheck se encarga de todo: calibración, revisión periódica y soporte ante incidencias. El local no tiene que gestionar nada.</p>
         </details>
-
         <details>
-          <summary>¿Qué perfil buscáis?</summary>
-          <p>Personas o empresas con enfoque comercial, capacidad para abrir ubicaciones y ganas de desarrollar una zona con visión de crecimiento.</p>
+          <summary>¿Cómo puedo solicitar una instalación?</summary>
+          <p>Puedes escribirnos directamente a info@nightcheck.es. Te respondemos en menos de 24 horas.</p>
         </details>
       </div>
     </div>
@@ -1034,48 +712,39 @@
     <div class="container">
       <div class="card cta-panel">
         <div>
-          <div class="badge">Conviértete en franquiciado</div>
-          <h2>Activa tu zona con NightCheck</h2>
+          <div class="badge">Ponemos la máquina, tú pones el local</div>
+          <h2>¿Quieres NightCheck en tu espacio?</h2>
           <p>
-            Si quieres entrar en un negocio vinculado al ocio nocturno con una propuesta clara y una marca preparada para escalar,
-            este es el momento de hablar. Te damos la estructura para empezar y crecer con apoyo.
+            Si tienes un local de ocio nocturno y quieres ofrecer este servicio a tus clientes,
+            cuéntanos dónde estás y te explicamos cómo funciona. Sin compromiso.
           </p>
         </div>
-
         <div class="contact-box">
           <h3 style="font-size:1.4rem; margin-bottom:6px;">Contacto</h3>
-          <p style="color: var(--muted);">Escríbenos y cuéntanos en qué ciudad o región quieres operar.</p>
-
+          <p style="color:var(--muted);">Escríbenos y te respondemos en menos de 24 h.</p>
           <div class="contact-list">
             <div class="contact-item">
               <span>Email</span>
               <a href="mailto:info@nightcheck.es">info@nightcheck.es</a>
             </div>
             <div class="contact-item">
-              <span>Marca</span>
-              NightCheck
-            </div>
-            <div class="contact-item">
-              <span>Actividad</span>
-              Franquicia de máquinas recreativas de test de alcohol para discotecas y ocio nocturno
+              <span>Servicio</span>
+              Instalación y operación de máquinas de test de alcohol para ocio nocturno
             </div>
           </div>
-
-          <a class="btn btn-primary" href="mailto:info@nightcheck.es?subject=Quiero%20informaci%C3%B3n%20sobre%20NightCheck">
-            Contactar ahora
+          <a class="btn btn-primary" href="mailto:info@nightcheck.es?subject=Solicitud%20de%20instalaci%C3%B3n%20NightCheck">
+            Enviar mensaje
           </a>
         </div>
       </div>
-
       <p class="legal-note">
-        Aviso informativo: esta web presenta el negocio y la propuesta comercial de NightCheck. En servicios de alcoholimetría de uso público,
-        el mantenimiento y la correcta calibración del equipo son aspectos sensibles del sector, y en España la recomendación general de seguridad
-        vial es no conducir tras consumir alcohol.
+        Aviso informativo: en España la recomendación general de seguridad vial es no conducir tras consumir alcohol.
+        NightCheck contribuye a una cultura del ocio más responsable ofreciendo información inmediata al usuario.
       </p>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-wrap">
       <div>
@@ -1083,9 +752,8 @@
           <div class="logo-mark">N</div>
           <div>NightCheck</div>
         </div>
-        <p>Franquicia especializada en máquinas de test de alcohol para ocio nocturno.</p>
+        <p>Máquinas de test de alcohol para ocio nocturno en España.</p>
       </div>
-
       <div>
         <p><span class="highlight">Email:</span> <a href="mailto:info@nightcheck.es">info@nightcheck.es</a></p>
       </div>
@@ -1095,48 +763,36 @@
   <script>
     function showSection(id) {
       document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
-      document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-
+      document.querySelectorAll('[data-target]').forEach(a => a.classList.remove('active'));
       if (id) {
-        const target = document.getElementById(id);
-        if (target) {
-          target.classList.add('active');
-          const link = document.querySelector(`.nav-links a[data-target="${id}"]`);
-          if (link) link.classList.add('active');
-          setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 10);
+        const t = document.getElementById(id);
+        if (t) {
+          t.classList.add('active');
+          document.querySelectorAll(`[data-target="${id}"]`).forEach(l => l.classList.add('active'));
+          setTimeout(() => t.scrollIntoView({ behavior: 'smooth', block: 'start' }), 10);
         }
       } else {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
 
-    function submitForm() {
-      const nombre  = document.getElementById('fc-nombre').value.trim();
-      const email   = document.getElementById('fc-email').value.trim();
-      const zona    = document.getElementById('fc-zona').value;
-
-      if (!nombre || !email) {
-        alert('Por favor, rellena al menos el nombre y el email.');
-        return;
-      }
-
-      const telefono = document.getElementById('fc-telefono').value.trim();
-      const mensaje  = document.getElementById('fc-mensaje').value.trim();
-
-      const subject = encodeURIComponent('Solicitud NightCheck - ' + (zona || 'Sin zona'));
-      const body = encodeURIComponent(
-        'Nombre: ' + nombre + '\n' +
-        'Email: ' + email + '\n' +
-        'Telefono: ' + (telefono || '-') + '\n' +
-        'Region: ' + (zona || '-') + '\n\n' +
-        'Mensaje:\n' + (mensaje || '-')
-      );
-
-      window.location.href = 'mailto:info@nightcheck.es?subject=' + subject + '&body=' + body;
-
-      document.getElementById('contactForm').style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
+    function toggleMenu() {
+      document.getElementById('hamburger').classList.toggle('open');
+      document.getElementById('mobileMenu').classList.toggle('open');
     }
+
+    function closeMenu() {
+      document.getElementById('hamburger').classList.remove('open');
+      document.getElementById('mobileMenu').classList.remove('open');
+    }
+
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('mobileMenu');
+      const ham  = document.getElementById('hamburger');
+      if (menu.classList.contains('open') && !menu.contains(e.target) && !ham.contains(e.target)) {
+        closeMenu();
+      }
+    });
   </script>
 
 </body>
